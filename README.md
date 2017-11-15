@@ -2,10 +2,8 @@
 <p>termux-login is simple utility to check correct login and password of user for Termux( https://github.com/termux ) on non-rooted devices.</p>
 <p><b> With this utility you could not add users to android sytem and set permissions for files and folders!<b></p>
 <b><p>Compilation:</p></b>
-```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
+<p>
+``` make && make clean ```
+  </p>
 
   
