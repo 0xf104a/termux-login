@@ -15,7 +15,7 @@ install: compile
 	mkdir -p $(FSROOT)/etc
 clean:
 	rm -f *.o
-	rm -f *.swp
+	rm -f .*.swp
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 

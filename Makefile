@@ -18,7 +18,7 @@ passwd:
 	cd passwd && make
 
 clean:
-	rm -rf *.swp
+	rm -rf .*.swp
 	cd passwd && make clean
 	cd ..
 	cd login && make clean
