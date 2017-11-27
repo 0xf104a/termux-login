@@ -6,16 +6,21 @@ OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=login
 BIN=/data/data/com.termux/files/usr/bin
 FSROOT=/data/data/com.termux/files
-all:adduser login passwd
+all:adduser login passwd post clean
 
 adduser:
 	cd adduser && make
+	cd ..
 
 login:
 	cd login && make
+	cd ..
 
 passwd:
 	cd passwd && make
+	cd ..
+post:
+	sh scripts/post-install.sh
 
 clean:
 	rm -rf .*.swp
