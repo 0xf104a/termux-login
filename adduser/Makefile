@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=login.cpp crypto/sha512/sha512.cpp getpass.cpp cutil/strutil.c checkuser.cpp
+SOURCES=adduser.cpp crypto/sha512/sha512.cpp getpass.cpp cutil/strutil.c checkuser.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=login
 BIN=/data/data/com.termux/files/usr/bin
@@ -16,6 +16,7 @@ install: compile
 clean:
 	rm -f *.o
 	rm -f .*.swp
+	rm -f adduser
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 

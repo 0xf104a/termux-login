@@ -16,6 +16,7 @@ install: compile
 clean:
 	rm -f *.o
 	rm -f .*.swp
+	rm -f login
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 

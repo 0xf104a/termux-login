@@ -15,6 +15,7 @@ install: compile
 clean:
 	rm -f *.o
 	rm -f .*.swp
+	rm -f passwd
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 

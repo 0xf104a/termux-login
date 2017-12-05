@@ -25,10 +25,7 @@ post:
 clean:
 	rm -rf .*.swp
 	cd passwd && make clean
-	rm passwd
 	cd ..
 	cd login && make clean
-	rm login
 	cd ..
 	cd adduser && make clean
-	rm adduser
