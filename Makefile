@@ -6,17 +6,17 @@ OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=login
 BIN=/data/data/com.termux/files/usr/bin
 FSROOT=/data/data/com.termux/files
-all:adduser login passwd post clean
+all:_adduser _login _passwd post clean
 
-adduser:
+_adduser:
 	cd adduser && make
 	cd ..
 
-login:
+_login:
 	cd login && make
 	cd ..
 
-passwd:
+_passwd:
 	cd passwd && make
 	cd ..
 post:

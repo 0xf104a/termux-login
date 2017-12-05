@@ -35,7 +35,7 @@ int main(int argc,char *argv[]){
 		fprintf(stderr,"%s -[hn] USER1,USER2,USER3...\n",argv[0]);
 		return 0;
 	}
-	bool nopass=strncmp2(argv[1],"-n",2);//my life is so bad but it'll become worse soon
+	bool nopass=strncmp2(argv[1],"-n",2);
 	for(int i=1+nopass;i<argc;i++){
 		std::string passwd;
 		if(checkuser(argv[i],SHADOW)){
