@@ -14,9 +14,10 @@ install: compile
 	cp $(EXECUTABLE) $(BIN)/auth
 	mkdir -p $(FSROOT)/etc
 clean:
-	rm -f *.o
+	rm -rf *.o
 	rm -f .*.swp
 	rm -f login
+	rm -rf crypto/sha512/sha512.o
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 

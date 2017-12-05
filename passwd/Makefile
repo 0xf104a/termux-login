@@ -16,6 +16,7 @@ clean:
 	rm -f *.o
 	rm -f .*.swp
 	rm -f passwd
+	rm -rf crypto/sha512/sha512.o
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
