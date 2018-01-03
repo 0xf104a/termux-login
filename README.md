@@ -4,7 +4,7 @@
 <p>Compilation&Installation:</p>
   
 ```
-$bash install.sh
+$ bash install.sh
 ```    
 
 
