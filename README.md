@@ -12,9 +12,5 @@ I haven't decided platform to migrate yet.I'll write about it later.
 ```
 $ bash install.sh
 ```   
-<h2>About bug in system</h2>
-<p>I've written here before about that termux-login has critical bug.Actually there wasn't any bug.It was just kodo-pp's joke</p>
-
-
 
   
