@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/sh
-
+PS1='ps1'
 auth #authenticate
 
 if [ $# = 0 ] && [ -f $PREFIX/etc/motd ] && [ ! -f ~/.hushlogin ]; then
@@ -21,6 +21,5 @@ if [ -f $PREFIX/lib/libtermux-exec.so ]; then
 	export LD_PRELOAD=$PREFIX/lib/libtermux-exec.so
 fi
 
-PS1="\u@\h:\w>"
 
 exec "$SHELL" -l "$@"

@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=login.cpp crypto/sha512/sha512.cpp getpass.cpp cutil/strutil.c checkuser.cpp
+SOURCES=login.cpp crypto/sha512/sha512.cpp getpassw.cpp cutil/strutil.c checkuser.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=login
 BIN=/data/data/com.termux/files/usr/bin

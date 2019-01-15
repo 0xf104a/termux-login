@@ -26,7 +26,7 @@ int main(int argc,char *  argv[]){
 	}
 	for(int i=1;i<argc-nopass;i++){
 		if(checkuser(argv[i+nopass],"/data/data/com.termux/files/usr/etc/shadow")){
-				fprintf(stderr,"%s:User already exists\n",argv[i+nopass]);
+				fprintf(stderr,"%s:%s:User already exists\n",argv[0],argv[i+nopass]);
 				continue;
 		}
 		if(nopass){

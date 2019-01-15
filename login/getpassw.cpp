@@ -1,3 +1,5 @@
+#include "getpassw.h"
+
 #include <iostream>
 #include <string>
 #include <termios.h>
@@ -23,7 +25,7 @@ int getch() {
 }
 
 
-std::string get_str(){
+std::string get_string(){
 	std::string s;
 	unsigned char t;
 	for(;;){
@@ -38,7 +40,7 @@ std::string get_str(){
 	}
 }
 
-std::string getpass(const char *prompt, bool show_asterisk=true,char mask='*')
+std::string get_password(const char *prompt, bool show_asterisk,char mask)
 {
 
   std::string password;
@@ -77,7 +79,7 @@ std::string getpass(const char *prompt, bool show_asterisk=true,char mask='*')
 #ifdef TEST_PASS
 int main(){
 	std::cout<<"testing password";
-	std::string p=getpass("Password:");
+	std::string p=get_password("Password:");
 	std::cout<<p<<std::endl;
 	return 0;
 }

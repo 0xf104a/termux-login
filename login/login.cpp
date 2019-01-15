@@ -2,12 +2,11 @@
 #include <cstdlib>
 #include <string>
 #include <unistd.h>
-
 #define SHADOW "/data/data/com.termux/files/usr/etc/shadow"
-#include "getpass.h"
+#include "getpassw.h"
 #include "checkuser.h"
 #include "crypto/sha512/sha512.h"
-	
+//std::string get_str(void);	
 int main(int argc,char **argv){
 	std::string login;
 	std::string pass;
@@ -15,8 +14,8 @@ int main(int argc,char **argv){
 	gethostname(hostname,2048);
         for(;;){
 	  printf("%s login:",hostname);
-	  login=get_str();
-	  pass=getpass("Password:");
+	  login=get_string();
+	  pass=get_password("Password:");
 	//printf("login=%s\npassword=%s\n",login.c_str(),pass.c_str());
 	  std::string hash=sha512(login+pass);
 	  std::string rhash=getuserhash(login,SHADOW);
