@@ -37,23 +37,28 @@ int main(int argc,char *argv[]){
 	}
 	bool nopass=strncmp2(argv[1],"-n",2);
 	for(int i=1+nopass;i<argc;i++){
-		std::string passwd;
+		std::string passwd,rpasswd;
 		if(checkuser(argv[i],SHADOW)){
 		   printf("Old password for %s:",argv[i]);
 		   passwd=getpass("");
 		}else{
-		   printf("%s:No such user\n",argv[i]);
+		   printf("%s:%s:No such user\n",argv[0],argv[i]);
 		   continue;
 		}
 		if(getuserhash(argv[i],SHADOW)!=sha512(argv[i]+passwd)){
-			printf("%s:Login incorrect\n",argv[i]);
+			printf("%s:%s:Login incorrect\n",argv[0],argv[i]);
 			continue;
 		}
-		std::ifstream shad(SHADOW);
+		//std::ifstream shad(SHADOW);
 		//shad(SHADOW);
 		printf("New password for %s:",argv[i]);
 		passwd=getpass("");
+		rpasswd=getpass("Repeat password:");
+		if(passwd!=rpasswd){
+			printf("%s:%s:Skipping user:password mismatch\n",argv[0],argv[i]);
+		}
 		replacefline((std::string)argv[i]+":"+getuserhash(argv[i],SHADOW),(std::string)argv[i]+":"+sha512((std::string)argv[i]+passwd),SHADOW);
+	        printf("%s:%s:Password updated succesfully\n",argv[0],argv[i]);
 	}
 	return 0;
 }

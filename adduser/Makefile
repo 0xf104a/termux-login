@@ -3,7 +3,7 @@ CFLAGS=-c -Wall
 LDFLAGS=
 SOURCES=adduser.cpp crypto/sha512/sha512.cpp getpass.cpp cutil/strutil.c checkuser.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=login
+EXECUTABLE=adduser
 BIN=/data/data/com.termux/files/usr/bin
 FSROOT=/data/data/com.termux/files
 all:compile install clean
